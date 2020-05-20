@@ -1,12 +1,35 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+    <div id="nav" style="display: flex;justify-content: center;align-content: center;cursor: pointer;">
+      <div @click="toHome" class="mr10">Home</div>
+      <div @click="toAbout" class="mr10">About</div>
+      <div @click="toFunction" class="mr10">Function</div>
     </div>
     <router-view/>
   </div>
 </template>
+
+<script>
+export default {
+  methods: {
+    toHome () {
+      this.$router.push({
+        name: 'Home'
+      })
+    },
+    toAbout () {
+      this.$router.push({
+        name: 'About'
+      })
+    },
+    toFunction () {
+      this.$router.push({
+        name: 'Function'
+      })
+    }
+  }
+}
+</script>
 
 <style>
 #app {
