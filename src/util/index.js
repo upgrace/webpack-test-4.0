@@ -1,4 +1,4 @@
-export const throttle = function (fn, wait, immediate) {
+export const throttle = function (fn, wait) {
   return function () {
     const cxt = this
     const args = arguments
@@ -16,7 +16,7 @@ const timer = {
   debounce: null
 }
 
-export const debounce = function (fn, wait, immediate) {
+export const debounce = function (fn, wait) {
   clearTimeout(timer.debounce)
 
   return function () {

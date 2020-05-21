@@ -1,7 +1,6 @@
 <template>
   <div>
     <Button type="primary" @click="testThrottle" class="mr10">Test Throttle</Button>
-    <Button type="primary" @click="testThrottle2" class="mr10">Test Throttle2</Button>
     <Button type="primary" @click="testDebounce" class="mr10">Test Debounce</Button>
     {{count}} - {{handler}}
   </div>
@@ -14,12 +13,10 @@ export default {
     return {
       count: {
         throttle: 0,
-        throttle2: 0,
         debounce: 0
       },
       handler: {
         throttle: 0,
-        throttle2: 0,
         debounce: 0
       }
     }
@@ -29,13 +26,7 @@ export default {
       this.count.throttle++
       throttle(() => {
         this.handler.throttle++
-      }, 2000, true)()
-    },
-    testThrottle2 () {
-      this.count.throttle2++
-      throttle(() => {
-        this.handler.throttle2++
-      }, 2000, true)()
+      }, 2000)()
     },
     // throttle (fn, wait) {
     //   const cxt = this
@@ -52,7 +43,7 @@ export default {
 
       debounce(() => {
         this.handler.debounce++
-      }, 2000, true)()
+      }, 2000)()
       // this.handler.debounce++
     }
   }
