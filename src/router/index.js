@@ -22,6 +22,11 @@ const routes = [
     path: '/function',
     name: 'Function',
     component: () => import('../views/Function.vue')
+  },
+  {
+    path: '/promise',
+    name: 'Promise',
+    component: () => import('../views/Promise.vue')
   }
 ]
 
